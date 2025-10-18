@@ -1,10 +1,11 @@
-import Breadcrumb from "@/components/Breadcrumb";
 
-const bread = [{name:"Home",href:"/"},{name:"About",href:"/"},{name:"Contact",href:"/"}]
+import HeroSection from "@/components/HeroSection";
+
+
 export default function Home() {
   return (
-    <div className="">
-      <Breadcrumb breadcrumbItems={bread}/>
+    <div id="home" className="px-3 py-5">
+      <HeroSection/>
     </div>
   );
 }
