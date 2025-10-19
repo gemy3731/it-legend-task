@@ -3,7 +3,7 @@ import Breadcrumb from "./Breadcrumb";
 import bread from "@/data/breadData";
 import social from "@/data/socailData";
 import SocialIcon from "./SocialIcon";
-
+import ReactPlayer from "react-player";
 const HeroSection = () => {
   return (
     <section id="hero">
@@ -11,14 +11,17 @@ const HeroSection = () => {
       <h1 className="text-[32px] font-bold mt-5">
         Starting SEO as your Home <span>Based Business</span>
       </h1>
-      <video
+      <div className="relative w-full max-h-[525px] aspect-[1.5] rounded-lg overflow-hidden mt-5">
+      <ReactPlayer
+        src="https://www.youtube.com/watch?v=Pf_7qcX0AFs"
         controls
-        poster="/videos/videoPoster.png"
-        className="mt-5  w-full max-h-[525px] aspect-[1.5] object-fill rounded-lg"
-      >
-        <source src="/videos/heroVideo.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+        light="/videos/videoPoster.png"
+        width="100%"
+        height="525px"
+        className="absolute top-0 left-0 object-fill"
+      />
+      </div>
+ 
       <div className="flex gap-5 mt-5 ml-5">
       {social.map((item, index) => (
         <SocialIcon Icon={item.icon} name={item.name} sectionId={item.sectionId} key={index} />
