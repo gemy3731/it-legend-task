@@ -1,4 +1,5 @@
 
+import CommentsSection from "@/components/CommentsSection";
 import CourseMaterialSection from "@/components/CourseMaterialSection";
 import CoursesSection from "@/components/CoursesSection";
 import HeroSection from "@/components/HeroSection";
@@ -10,6 +11,7 @@ export default function Home() {
       <HeroSection/>
       <CourseMaterialSection/>
       <CoursesSection/>
+      <CommentsSection/>
     </div>
   );
 }
