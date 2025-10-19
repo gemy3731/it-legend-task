@@ -3,6 +3,7 @@ import CommentsSection from "@/components/CommentsSection";
 import CourseMaterialSection from "@/components/CourseMaterialSection";
 import CoursesSection from "@/components/CoursesSection";
 import HeroSection from "@/components/HeroSection";
+import WriteCommentSection from "@/components/WriteCommentSection";
 
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <CourseMaterialSection/>
       <CoursesSection/>
       <CommentsSection/>
+      <WriteCommentSection/>
     </div>
   );
 }
