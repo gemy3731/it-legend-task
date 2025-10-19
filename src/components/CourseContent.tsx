@@ -1,10 +1,22 @@
+"use client";
 import { HiOutlineLockClosed } from "react-icons/hi";
 import { IoDocumentTextOutline } from "react-icons/io5";
-
+import ExamModal from "./ExamModal";
+import { useState } from "react";
+export interface answers{
+  1:string;
+  2:string;
+  3:string;
+  4:string;
+}
 const CourseContent = ({ index }: { index: number }) => {
+  const [answers, setAnswers] = useState<answers>({1:"",2:"",3:"",4:""});
+  const [isOpen, setIsOpen] = useState(false);
+
   if (index === 0) {
     return (
       <ul>
+        {isOpen && <ExamModal setAnswers={setAnswers} answers={answers} setIsOpen={setIsOpen} />}
         <li>
           <div>
             <IoDocumentTextOutline />
@@ -21,7 +33,7 @@ const CourseContent = ({ index }: { index: number }) => {
           <HiOutlineLockClosed />
         </li>
 
-        <li>
+        <li onClick={() => setIsOpen(true)} className="cursor-pointer">
           <div>
             <IoDocumentTextOutline />
             <span>Course Overview</span>
@@ -61,6 +73,7 @@ const CourseContent = ({ index }: { index: number }) => {
   if (index === 1) {
     return (
       <ul>
+        {isOpen && <ExamModal setAnswers={setAnswers} answers={answers} setIsOpen={setIsOpen} />}
         <li>
           <div>
             <IoDocumentTextOutline />
@@ -77,7 +90,7 @@ const CourseContent = ({ index }: { index: number }) => {
           <HiOutlineLockClosed />
         </li>
 
-        <li>
+        <li onClick={() => setIsOpen(true)} className="cursor-pointer">
           <div>
             <IoDocumentTextOutline />
             <span>Return Values From Functions</span>
@@ -117,6 +130,7 @@ const CourseContent = ({ index }: { index: number }) => {
   if (index === 2) {
     return (
       <ul>
+        {isOpen && <ExamModal setAnswers={setAnswers} answers={answers} setIsOpen={setIsOpen} />}
         <li>
           <div>
             <IoDocumentTextOutline />
@@ -133,7 +147,7 @@ const CourseContent = ({ index }: { index: number }) => {
           <HiOutlineLockClosed />
         </li>
 
-        <li>
+        <li onClick={() => setIsOpen(true)} className="cursor-pointer">
           <div>
             <IoDocumentTextOutline />
             <span>Return Values From Functions</span>

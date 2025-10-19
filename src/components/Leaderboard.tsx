@@ -1,15 +1,11 @@
-import { useEffect } from "react";
+"use client";
+import usePreventScroll from "@/hooks/usePreventScroll";
 import { IoClose } from "react-icons/io5";
 
 const Leaderboard = ({setIsOpen}:{setIsOpen:React.Dispatch<React.SetStateAction<boolean>>}) => {
-    useEffect(() => {
-      document.body.style.overflow = "hidden";
-      return () => {
-        document.body.style.overflow = "auto";
-      };
-    }, []);
+    usePreventScroll()
   return (
-    <div className="fixed top-0 left-0 w-full h-full bg-[#000]/50 flex items-center justify-center">
+    <div className="fixed top-0 left-0 w-full h-full bg-[#000]/50 flex items-center justify-center z-[999]">
       <div className="relative bg-white p-6 rounded-lg max-w-[500px]">
         <span onClick={()=>setIsOpen(false)} className="absolute top-2 right-2 cursor-pointer"><IoClose size={25} /></span>
         <p className="text-center">Course Name Shown Here</p>

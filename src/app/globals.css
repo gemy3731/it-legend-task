@@ -1,24 +1,23 @@
 @import "tailwindcss";
-@theme{
-  --breakpoint-msm:480px;
+@theme {
+  --breakpoint-msm: 480px;
 }
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-button{
+button {
   cursor: pointer;
 }
-.breadcrumb{
+.breadcrumb {
   display: flex;
 }
-.breadcrumb > *:not(:last-child)::after{
+.breadcrumb > *:not(:last-child)::after {
   content: ">";
   margin-inline: 10px;
-  
 }
-.courseContent li:not(:last-child){
+.courseContent li:not(:last-child) {
   border-bottom: 1px solid #0000001f;
 }
 .courseContent li {
@@ -27,43 +26,71 @@ button{
   align-items: center;
   padding: 18px 12px;
 }
-.courseContent li > div{
+.courseContent li > div {
   display: flex;
   /* justify-content: space-between; */
   align-items: center;
-  gap: 5px
+  gap: 5px;
 }
-#home{
+#home {
   display: grid;
-  grid-template-areas: "heroSection  "
-                       "coursesSection"
-                       "commentsSection"
+  grid-template-areas:
+    "heroSection  "
+    "coursesSection"
+    "commentsSection";
 }
-.heroSection{
+.heroSection {
   grid-area: heroSection;
 }
-.coursesSection{
+.coursesSection {
   grid-area: coursesSection;
 }
-.commentsSection{
+.commentsSection {
   grid-area: commentsSection;
 }
 
 @media screen and (min-width: 768px) {
-  #home{
-    grid-template-areas: "heroSection coursesSection"
-                         "commentsSection coursesSection";
+  #home {
+    grid-template-areas:
+      "heroSection coursesSection"
+      "commentsSection coursesSection";
     gap: 50px;
-                         
   }
 }
 
-.myProgress::after{
-  content:"▼";
+.myProgress::after {
+  content: "▼";
   position: absolute;
   top: 105%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 12px;
   color: #c5c5c5;
+}
+
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none; /* For Safari */
+  width: 20px;
+  height: 20px;
+  border: 1px solid #555;
+  border-radius: 4px; /* make it 0 for sharp corners */
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+input[type="radio"]:checked{
+  background-color: transparent;
+  border: 1px solid #ffffff;
+}
+input[type="radio"]:checked::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: white;
 }
