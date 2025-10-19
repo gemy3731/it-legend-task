@@ -16,6 +16,21 @@ button{
   margin-inline: 10px;
   
 }
+.courseContent li:not(:last-child){
+  border-bottom: 1px solid #0000001f;
+}
+.courseContent li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 12px;
+}
+.courseContent li > div{
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  gap: 5px
+}
 #home{
   display: grid;
   grid-template-areas: "heroSection  "
