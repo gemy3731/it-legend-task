@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+@theme{
+  --breakpoint-msm:480px;
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,7 +25,7 @@ button{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 12px;
+  padding: 18px 12px;
 }
 .courseContent li > div{
   display: flex;
@@ -34,16 +36,34 @@ button{
 #home{
   display: grid;
   grid-template-areas: "heroSection  "
-                       "taskSection"
-                       "commentSection"
+                       "coursesSection"
+                       "commentsSection"
 }
-#heroSection{
+.heroSection{
   grid-area: heroSection;
 }
-#taskSection{
-  grid-area: taskSection;
+.coursesSection{
+  grid-area: coursesSection;
 }
-#commentSection{
-  grid-area: commentSection;
+.commentsSection{
+  grid-area: commentsSection;
 }
 
+@media screen and (min-width: 768px) {
+  #home{
+    grid-template-areas: "heroSection coursesSection"
+                         "commentsSection coursesSection";
+    gap: 50px;
+                         
+  }
+}
+
+.myProgress::after{
+  content:"▼";
+  position: absolute;
+  top: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #c5c5c5;
+}

@@ -24,15 +24,19 @@ const Progressbar = () => {
     };
   }, []);
   return (
-    <div
-      ref={ref}
-      className="w-full h-1.5 bg-[#C7DCEB] rounded-full overflow-hidden"
-    >
+    <div ref={ref} className="w-full h-1.5 bg-[#C7DCEB] rounded-full ">
       <div
-        className={`h-full bg-[#6abd8a] rounded-full transition-all duration-1000 ease-in-out ${
-          inView ? "w-[70%]" : "w-0"
+        className={`h-full relative bg-[#6abd8a] rounded-full transition-all duration-1000 ease-in-out ${
+          inView ? "w-[63%]" : "w-0"
         } `}
-      ></div>
+      >
+        <span className="absolute top-[130%] left-[100%] transform -translate-x-1/2 text-[12px]">
+          63%
+        </span>
+        <span className="myProgress absolute -top-[55px] left-[100%] transform -translate-x-1/2 text-[11px] font-medium rounded-full h-[20px] w-[20px] border border-[#c5c5c5] p-4 flex items-center justify-center">
+          You
+        </span>
+      </div>
     </div>
   );
 };

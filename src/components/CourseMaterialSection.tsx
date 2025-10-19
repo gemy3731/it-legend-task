@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const CourseMaterialSection = () => {
   return (
-    <section id="courseMaterial" className="bg-white pt-10 px-5 pb-3 mt-10 flex flex-col gap-8 max-w-[350px] rounded-lg">
+    <section id="courseMaterial" className="bg-white pt-10 px-5 pb-3 mt-10 flex flex-col gap-8 w-full rounded-lg">
       <h2 className="text-[22px] font-bold">Course Materials</h2>
       <ul className="">
         {courseMaterialData.map((item) => (

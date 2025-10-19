@@ -6,7 +6,7 @@ import SocialIcon from "./SocialIcon";
 
 const HeroSection = () => {
   return (
-    <section id="heroSection">
+    <section id="hero">
       <Breadcrumb breadcrumbItems={bread} />
       <h1 className="text-[32px] font-bold mt-5">
         Starting SEO as your Home <span>Based Business</span>
@@ -14,7 +14,7 @@ const HeroSection = () => {
       <video
         controls
         poster="/videos/videoPoster.png"
-        className="mt-5  w-full aspect-[1.5] object-cover rounded-lg"
+        className="mt-5  w-full max-h-[525px] aspect-[1.5] object-fill rounded-lg"
       >
         <source src="/videos/heroVideo.mp4" type="video/mp4" />
         Your browser does not support the video tag.

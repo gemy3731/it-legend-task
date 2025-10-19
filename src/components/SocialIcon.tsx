@@ -1,18 +1,24 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
+import Leaderboard from "./Leaderboard";
 
 const SocialIcon = ({
   Icon,
   name,
-  sectionId
+  sectionId,
 }: {
   Icon: StaticImageData;
   name: string;
   sectionId: string;
 }) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const goToSection = () => {
+    if(sectionId=="leaderboard") {
+      setIsOpen(true);
+      return;
+    };
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
@@ -24,7 +30,7 @@ const SocialIcon = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={goToSection}
-        className="border border-[#b3b3b357] rounded-full p-3 relative"
+        className="border border-[#b3b3b357] rounded-full p-3 relative cursor-pointer"
       >
         <Image src={Icon} alt="icon" width={20} height={20}></Image>
         {isHovered && (
@@ -33,6 +39,7 @@ const SocialIcon = ({
           </div>
         )}
       </div>
+      {isOpen && <Leaderboard setIsOpen={setIsOpen} />}
     </>
   );
 };
